@@ -1,0 +1,15 @@
+name: Setup go-swagger
+description: Install a specific version of go-swagger binary
+inputs:
+  version:
+    description: Version of go-swagger
+    required: true
+    default: latest
+outputs:
+  go-swagger-path:
+    description: Path to the go-swagger binary
+branding:
+  color: blue
+runs:
+  using: node12
+  main: dist/index.js

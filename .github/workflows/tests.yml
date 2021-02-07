@@ -1,0 +1,26 @@
+name: tests
+on:
+  push: { }
+  pull_request: { }
+  workflow_dispatch: { }
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run ts-standard
+
+  test:
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm install
+      - run: npm run test-coverage

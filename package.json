@@ -1,0 +1,41 @@
+{
+  "name": "setup-go-swagger",
+  "version": "1.0.0",
+  "description": "Set up your GitHub Actions workflow with a specific version of go-swagger",
+  "keywords": [
+    "actions",
+    "go-swagger",
+    "setup"
+  ],
+  "license": "MIT",
+  "main": "dist/run.js",
+  "scripts": {
+    "build": "tsc && ncc build",
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "ts-standard": "ts-standard",
+    "ts-standard-fix": "ts-standard --fix"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/http-client": "^1.0.9",
+    "@actions/tool-cache": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/nock": "^11.1.0",
+    "@types/node": "^14.14.25",
+    "@zeit/ncc": "^0.22.3",
+    "jest": "^26.6.3",
+    "nock": "^13.0.7",
+    "ts-jest": "^26.5.0",
+    "ts-standard": "^10.0.0",
+    "typescript": "^4.1.3"
+  },
+  "ts-standard": {
+    "ignore": [
+      "dist",
+      "__tests__"
+    ]
+  }
+}
